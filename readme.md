@@ -1,6 +1,6 @@
 # Bike Rental Service (Server)
 
-## Follow The Instruction To Run The Application Locally
+## Follow The Instructions To Run The Application Locally
 
 - Step:1 **Clone the repository**
 
@@ -14,21 +14,15 @@
   cd Bike-Rental-Service
 ```
 
-- Step:3 **Change the directory**
-
-```bash
-  cd Bike-Rental-Service
-```
-
 Or simply you can navigate to the folder, then open vs code to the directory.
 
-- Step:4 **Install node modules and all the dependencies**
+- Step:3 **Install node modules and all the dependencies**
 
 ```bash
   npm i / npm install
 ```
 
-- Step:5 **.env file setup**
+- Step:4 **.env file setup**
 
 ```bash
    NODE_ENV=development
