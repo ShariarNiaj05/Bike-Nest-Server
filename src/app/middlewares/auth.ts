@@ -5,6 +5,7 @@ import AppError from '../errors/AppError'
 import httpStatus from 'http-status'
 import jwt, { JwtPayload } from 'jsonwebtoken'
 import config from '../config'
+import { User } from '../modules/user/user.model'
 
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
@@ -26,6 +27,22 @@ const auth = (...requiredRoles: TUserRole[]) => {
     ) as JwtPayload
 
     console.log('decoded from middleware auth.ts', decoded)
+
+    const { email, role } = decoded
+
+    // checking if user is exist
+    const user = await User.findOne({ email: email })
+    if (!user) {
+      throw new AppError(httpStatus.NOT_FOUND, 'User Not Found')
+    }
+
+    if (requiredRoles && !requiredRoles.includes(role)) {
+      throw new AppError(
+        httpStatus.FORBIDDEN,
+        "You're not authorized to go forward",
+      )
+    }
+    req.user = decoded as JwtPayload
     next()
   })
 }
