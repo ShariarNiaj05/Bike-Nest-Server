@@ -5,7 +5,7 @@ type TResponse<T> = {
   statusCode: number
   success: boolean
   message?: string
-  token?: JwtPayload
+  token?: JwtPayload | unknown | string
   data: T
 }
 
@@ -21,6 +21,7 @@ const sendResponse = <T>(res: Response, data: TResponse<T>) => {
       success: data.success,
       statusCode: data?.statusCode,
       message: data.message,
+      toke: data.token,
       data: data.data,
     })
   }
