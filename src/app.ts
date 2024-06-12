@@ -4,6 +4,7 @@ import router from './app/routes'
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
 import notFound from './app/middlewares/notFound'
 import notFoundRoute from './app/middlewares/notFoundRoute'
+import cookieParser from 'cookie-parser'
 
 const app: Application = express()
 
@@ -11,12 +12,13 @@ const app: Application = express()
 app.use(express.json())
 app.use(
   cors({
-    origin: ['http://localhost:5173'],
+    origin: [''],
   }),
 )
+app.use(cookieParser())
 
 // application routes
-app.use('/api/v1', router)
+app.use('/api', router)
 
 const test = async (req: Request, res: Response) => {
   // Promise.reject();
