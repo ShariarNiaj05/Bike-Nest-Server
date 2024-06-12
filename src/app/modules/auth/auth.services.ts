@@ -11,23 +11,8 @@ const loginUser = async (payload: TLoginUser) => {
   if (!user) {
     throw new AppError(httpStatus.NOT_FOUND, 'User Not Found')
   }
-  // checking if the user is already deleted
-  /* const isDeleted = user?.isDeleted
-  if (isDeleted) {
-    throw new AppError(httpStatus.FORBIDDEN, 'User is already deleted')
-  }
- */
 
-  // checking if the password is correct by using static instance method
-  /* const isPasswordMatched = await User.isPasswordMatched(
-    payload?.password,
-    user?.password,
-  )
-  if (!isPasswordMatched) {
-    throw new AppError(httpStatus.FORBIDDEN, 'Password Not Matched')
-  } */
-
-  // access granted: send accessToken and refreshToken
+  // send accessToken
   const jwtPayload = {
     email: user.email,
     role: user.role,

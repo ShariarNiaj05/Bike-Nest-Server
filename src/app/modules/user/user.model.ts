@@ -15,7 +15,7 @@ const userSchema = new Schema<TUser>(
     password: {
       type: String,
       required: true,
-      select: 0,
+      select: false,
     },
     phone: {
       type: String,
@@ -32,6 +32,12 @@ const userSchema = new Schema<TUser>(
   },
   {
     timestamps: true,
+    toJSON: {
+      transform: (doc, ret) => {
+        delete ret.password // Remove the password field
+        return ret
+      },
+    },
   },
 )
 

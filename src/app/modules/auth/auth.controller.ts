@@ -3,14 +3,24 @@ import config from '../../config'
 import catchAsync from '../../utils/catchAsync'
 import sendResponse from '../../utils/sendResponse'
 import { AuthServices } from './auth.services'
-import { JwtPayload } from 'jsonwebtoken'
+import { User } from '../user/user.model'
+import jwt, { JwtPayload } from 'jsonwebtoken'
+import AppError from '../../errors/AppError'
 
 const loginUser = catchAsync(async (req, res) => {
+  const user = await User.findOne({ email: req?.body?.email })
   const accessToken = await AuthServices.loginUser(req.body)
-  //   console.log('access token from controller', accessToken)
+  const tokenSplit = accessToken?.split(' ')
 
-  //   console.log(accessToken)
+  const decoded = jwt.verify(
+    tokenSplit[1],
+    config.jwt_access_secret as string,
+  ) as JwtPayload
+  const { email: decodedEmail } = decoded
 
+  if (user?.email !== decodedEmail) {
+    throw new AppError(httpStatus.UNAUTHORIZED, 'Mis Information')
+  }
   res.cookie('accessToken', accessToken, {
     secure: config.NODE_ENV === 'production',
     httpOnly: true,
@@ -20,7 +30,7 @@ const loginUser = catchAsync(async (req, res) => {
     success: true,
     message: 'User logged in successfully',
     token: accessToken,
-    data: accessToken,
+    data: user,
   })
 })
 

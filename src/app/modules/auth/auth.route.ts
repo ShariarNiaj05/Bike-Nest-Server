@@ -9,7 +9,6 @@ const router = Router()
 
 router.post(
   '/',
-  auth(USER_ROLE.admin),
   validateRequest(AuthValidation.loginValidationSchema),
   AuthController.loginUser,
 )

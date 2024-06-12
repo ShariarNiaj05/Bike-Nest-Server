@@ -9,11 +9,8 @@ import { User } from '../modules/user/user.model'
 
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    console.log('inside auth utils')
     const token = req.headers.cookie as string
-    console.log('token from middleware auth.ts', token)
     const tokenSplit = token?.split('Bearer%20')
-    console.log('tokenSplit auth.ts', tokenSplit[1])
 
     //   check if any token available
     if (!token) {
@@ -25,8 +22,6 @@ const auth = (...requiredRoles: TUserRole[]) => {
       tokenSplit[1],
       config.jwt_access_secret as string,
     ) as JwtPayload
-
-    console.log('decoded from middleware auth.ts', decoded)
 
     const { email, role } = decoded
 
