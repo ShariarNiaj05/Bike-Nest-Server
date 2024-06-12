@@ -10,21 +10,13 @@ type TResponse<T> = {
 }
 
 const sendResponse = <T>(res: Response, data: TResponse<T>) => {
-  if (!data.data) {
-    res.status(data?.statusCode).json({
-      success: false,
-      message: 'No Data Found',
-      data: [],
-    })
-  } else {
-    res.status(data?.statusCode).json({
-      success: data.success,
-      statusCode: data?.statusCode,
-      message: data.message,
-      toke: data.token,
-      data: data.data,
-    })
-  }
+  res.status(data?.statusCode).json({
+    success: data.success,
+    statusCode: data?.statusCode,
+    message: data.message,
+    toke: data.token,
+    data: data.data,
+  })
 }
 
 export default sendResponse

@@ -1,4 +1,5 @@
-import jwt from 'jsonwebtoken'
+import jwt, { JwtPayload } from 'jsonwebtoken'
+import { TLoginUser } from './auth.interface'
 
 export const createToken = (
   jwtPayload: { email: string; role: string },

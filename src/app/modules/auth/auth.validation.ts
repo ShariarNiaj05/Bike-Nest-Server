@@ -9,6 +9,15 @@ const loginValidationSchema = z.object({
   }),
 })
 
+const accessTokenValidationSchema = z.object({
+  cookies: z.object({
+    accessToken: z.string({
+      required_error: 'Access Token Is Required',
+    }),
+  }),
+})
+
 export const AuthValidation = {
   loginValidationSchema,
+  accessTokenValidationSchema,
 }

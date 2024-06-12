@@ -6,12 +6,12 @@ import { AuthServices } from './auth.services'
 import { JwtPayload } from 'jsonwebtoken'
 
 const loginUser = catchAsync(async (req, res) => {
-  const result = await AuthServices.loginUser(req.body)
-  const { accessToken } = result
+  const accessToken = await AuthServices.loginUser(req.body)
+  //   console.log('access token from controller', accessToken)
 
-  console.log(accessToken)
+  //   console.log(accessToken)
 
-  res.cookie('accessToken', {
+  res.cookie('accessToken', accessToken, {
     secure: config.NODE_ENV === 'production',
     httpOnly: true,
   })
@@ -19,7 +19,7 @@ const loginUser = catchAsync(async (req, res) => {
     statusCode: httpStatus.OK,
     success: true,
     message: 'User logged in successfully',
-    token: accessToken as JwtPayload,
+    token: accessToken,
     data: accessToken,
   })
 })
