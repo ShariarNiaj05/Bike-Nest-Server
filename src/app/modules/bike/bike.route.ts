@@ -13,5 +13,6 @@ router.post(
   validateRequest(BikeValidation.bikeValidationSchema),
   BikeControllers.createBike,
 )
+router.get('/', BikeControllers.getAllBike)
 
 export const BikeRoutes = router

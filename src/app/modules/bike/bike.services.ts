@@ -12,7 +12,16 @@ const createBikeIntoDB = async (payload: TBike) => {
     throw new AppError(httpStatus.BAD_REQUEST, 'Failed to create Bike')
   }
 }
+const getAllBikeFromDB = async () => {
+  try {
+    const result = await Bike.find()
+    return result
+  } catch (error) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to create Bike')
+  }
+}
 
 export const BikeServices = {
   createBikeIntoDB,
+  getAllBikeFromDB,
 }
