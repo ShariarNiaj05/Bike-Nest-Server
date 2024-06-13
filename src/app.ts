@@ -3,7 +3,7 @@ import express, { Application, Request, Response } from 'express'
 import router from './app/routes'
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
 import notFound from './app/middlewares/notFound'
-import notFoundRoute from './app/middlewares/notFoundRoute'
+// import notFoundRoute from './app/middlewares/notFoundRoute'
 import cookieParser from 'cookie-parser'
 
 const app: Application = express()
