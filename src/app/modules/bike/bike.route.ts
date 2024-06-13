@@ -8,7 +8,7 @@ import { USER_ROLE } from '../user/user.constant'
 const router = Router()
 
 router.post(
-  '/bikes ',
+  '/',
   auth(USER_ROLE.admin),
   validateRequest(BikeValidation.bikeValidationSchema),
   BikeControllers.createBike,
