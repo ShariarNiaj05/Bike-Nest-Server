@@ -26,7 +26,25 @@ const getProfileFromDB = async (payload: JwtPayload | null) => {
   }
 }
 
+const updateProfileIntoDB = async (
+  payload: JwtPayload | null,
+  bodyPayload: Partial<TUser>,
+) => {
+  try {
+    if (payload) {
+      const email = payload.email
+      const result = User.findOneAndUpdate({ email }, bodyPayload, {
+        upsert: true,
+        new: true,
+      })
+      return result
+    }
+  } catch (error) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to Get User')
+  }
+}
 export const UserServices = {
   createUserIntoDB,
   getProfileFromDB,
+  updateProfileIntoDB,
 }
