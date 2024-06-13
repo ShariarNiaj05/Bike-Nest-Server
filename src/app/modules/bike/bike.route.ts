@@ -20,5 +20,6 @@ router.put(
   validateRequest(BikeValidation.updateBikeValidationSchema),
   BikeControllers.updateBike,
 )
+router.delete('/:id', auth(USER_ROLE.admin), BikeControllers.deleteBike)
 
 export const BikeRoutes = router

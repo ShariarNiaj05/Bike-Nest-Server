@@ -34,8 +34,18 @@ const updateBikeIntoDB = async (id: string, payload: Partial<TBike>) => {
   }
 }
 
+const deleteBikeFromDB = async (id: string) => {
+  try {
+    const result = await Bike.findByIdAndDelete(id)
+    return result
+  } catch (error) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to deleted bike')
+  }
+}
+
 export const BikeServices = {
   createBikeIntoDB,
   getAllBikeFromDB,
   updateBikeIntoDB,
+  deleteBikeFromDB,
 }
