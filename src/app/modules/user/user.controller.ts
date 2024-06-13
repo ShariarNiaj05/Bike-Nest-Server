@@ -14,6 +14,18 @@ const createUser = catchAsync(async (req, res) => {
   })
 })
 
+const getProfile = catchAsync(async (req, res) => {
+  const result = await UserServices.getProfileFromDB(req.user)
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User profile retrieved successfully',
+    data: result,
+  })
+})
+
 export const UserControllers = {
   createUser,
+  getProfile,
 }

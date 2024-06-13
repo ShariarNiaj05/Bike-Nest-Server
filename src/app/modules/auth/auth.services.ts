@@ -7,9 +7,13 @@ import config from '../../config'
 
 const loginUser = async (payload: TLoginUser) => {
   // checking if user is exist
-  const user = await User.findOne({ email: payload?.email })
+  const user = await User.findOne({ email: payload?.email }).select('+password')
   if (!user) {
     throw new AppError(httpStatus.NOT_FOUND, 'User Not Found')
+  }
+
+  if (user.password !== payload.password) {
+    throw new AppError(httpStatus.NOT_FOUND, "Email or Password doesn't match")
   }
 
   // send accessToken
@@ -17,14 +21,16 @@ const loginUser = async (payload: TLoginUser) => {
     email: user.email,
     role: user.role,
   }
+  // const bearerToken = `Bearer ${jwtPayload}`
   const accessToken = createToken(
+    // jwtPayload,
     jwtPayload,
-    // `Bearer ${jwtPayload} `,
     config.jwt_access_secret as string,
     config.jwt_access_expires_in as string,
   )
 
-  return `Bearer ${accessToken}`
+  // return `Bearer ${accessToken}`
+  return accessToken
 }
 
 export const AuthServices = {

@@ -9,15 +9,16 @@ import { User } from '../modules/user/user.model'
 
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    const token = req.headers.cookie as string
-    const tokenSplit = token?.split('Bearer%20')
+    const token = req.headers.authorization
 
+    console.log('new token is', token)
     //   check if any token available
     if (!token) {
       throw new AppError(httpStatus.UNAUTHORIZED, "You're not authorized")
     }
 
-    //   if token available, checking if the token valid or not
+    const tokenSplit = token?.split(' ')
+
     const decoded = jwt.verify(
       tokenSplit[1],
       config.jwt_access_secret as string,

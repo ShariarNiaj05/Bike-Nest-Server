@@ -9,11 +9,12 @@ import AppError from '../../errors/AppError'
 
 const loginUser = catchAsync(async (req, res) => {
   const user = await User.findOne({ email: req?.body?.email })
+
   const accessToken = await AuthServices.loginUser(req.body)
-  const tokenSplit = accessToken?.split(' ')
 
   const decoded = jwt.verify(
-    tokenSplit[1],
+    // tokenSplit[1],
+    accessToken,
     config.jwt_access_secret as string,
   ) as JwtPayload
   const { email: decodedEmail } = decoded
@@ -21,7 +22,9 @@ const loginUser = catchAsync(async (req, res) => {
   if (user?.email !== decodedEmail) {
     throw new AppError(httpStatus.UNAUTHORIZED, 'Mis Information')
   }
-  res.cookie('accessToken', accessToken, {
+
+  const bearerAccessToken = `Bearer ${accessToken}`
+  res.cookie('accessToken', bearerAccessToken, {
     secure: config.NODE_ENV === 'production',
     httpOnly: true,
   })
@@ -29,7 +32,7 @@ const loginUser = catchAsync(async (req, res) => {
     statusCode: httpStatus.OK,
     success: true,
     message: 'User logged in successfully',
-    token: accessToken,
+    token: bearerAccessToken,
     data: user,
   })
 })
