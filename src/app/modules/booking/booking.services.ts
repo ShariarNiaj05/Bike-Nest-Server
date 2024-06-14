@@ -7,7 +7,10 @@ import { User } from '../user/user.model'
 import { Bike } from '../bike/bike.model'
 import mongoose from 'mongoose'
 
-const createRentalIntoDB = async (payload: TBooking) => {
+const createRentalIntoDB = async (payload: {
+  authUserInformation: any
+  rentalInformation: any
+}) => {
   const session = await mongoose.startSession()
   try {
     session.startTransaction()
@@ -93,11 +96,11 @@ const returnBikeIntoDB = async (id: string) => {
         'Bike Has been already returned',
       )
     }
-    const currentTime = new Date()
+    const currentTime: any = new Date()
 
     // Calculate rental duration and cost
     const rentDurationInHours = Math.ceil(
-      (currentTime - rentInfo.startTime) / (1000 * 60 * 60),
+      (currentTime - (rentInfo.startTime as any)) / (1000 * 60 * 60),
     )
     const costPerHour = rentInfo.bikeId.pricePerHour
     const totalCost = rentDurationInHours * costPerHour
