@@ -6,6 +6,7 @@ import { JwtPayload } from 'jsonwebtoken'
 
 const createRentalIntoDB = async (payload: TBooking) => {
   try {
+    console.log('rentals ')
     const result = ''
     return result
   } catch (error) {
