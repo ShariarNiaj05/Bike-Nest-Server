@@ -38,7 +38,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
     if (requiredRoles && !requiredRoles.includes(role)) {
       throw new AppError(
         httpStatus.FORBIDDEN,
-        "You're not authorized to go forward",
+        'You have no access to this route',
       )
     }
     req.user = decoded as JwtPayload
