@@ -93,7 +93,6 @@ const returnBikeIntoDB = async (id: string) => {
         'Bike Has been already returned',
       )
     }
-    console.log({ rentInfo })
     const currentTime = new Date()
 
     // Calculate rental duration and cost
@@ -101,23 +100,25 @@ const returnBikeIntoDB = async (id: string) => {
       (currentTime - rentInfo.startTime) / (1000 * 60 * 60),
     )
     const costPerHour = rentInfo.bikeId.pricePerHour
-    console.log({ costPerHour })
     const totalCost = rentDurationInHours * costPerHour
 
     // Update rental record
     rentInfo.returnTime = currentTime
     rentInfo.totalCost = totalCost
     rentInfo.isReturned = true
-    await rentInfo.save()
+
+    console.log('sfddddd', rentInfo.bikeId)
     // changing bike available status from false to true
     const bikeIsAvailable = await Bike.findByIdAndUpdate(
-      rentInfo.bikeId,
+      rentInfo.bikeId._id,
       {
         isAvailable: true,
       },
       { new: true },
     )
-    // rentInfo.bikeId.isAvailable = bikeIsAvailable
+    console.log({ bikeIsAvailable })
+    rentInfo.bikeId = bikeIsAvailable
+    await rentInfo.save()
 
     await session.commitTransaction()
     await session.endSession()
