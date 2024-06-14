@@ -11,7 +11,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const token = req.headers.authorization
 
-    console.log('new token is', token)
+    // console.log('new token is', token)
     //   check if any token available
     if (!token) {
       throw new AppError(

@@ -77,12 +77,22 @@ const getAllRentalsForUserFromDB = async (requestHeader: JwtPayload) => {
   }
 }
 
-const returnBikeIntoDB = async () => {
+const returnBikeIntoDB = async (id: string) => {
+  const session = await mongoose.startSession()
+  const rentInfo = await Booking.findById(id).populate('bikeId')
+  console.log(rentInfo)
   try {
+    session.startTransaction()
+
+    await session.commitTransaction()
+    await session.endSession()
+
     const result = ''
     return result
   } catch (error) {
-    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to update Return Bike')
+    await session.abortTransaction()
+    await session.endSession()
+    throw new AppError(httpStatus.BAD_REQUEST, `Failed to Return bike ${error}`)
   }
 }
 
