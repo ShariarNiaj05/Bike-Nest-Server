@@ -14,7 +14,10 @@ const auth = (...requiredRoles: TUserRole[]) => {
     console.log('new token is', token)
     //   check if any token available
     if (!token) {
-      throw new AppError(httpStatus.UNAUTHORIZED, "You're not authorized")
+      throw new AppError(
+        httpStatus.UNAUTHORIZED,
+        'You have no access to this route',
+      )
     }
 
     const tokenSplit = token?.split(' ')
