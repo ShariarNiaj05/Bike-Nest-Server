@@ -4,7 +4,11 @@ import sendResponse from '../../utils/sendResponse'
 import { BookingServices } from './booking.services'
 
 const createRental = catchAsync(async (req, res) => {
-  const result = await BookingServices.createRentalIntoDB(req.body)
+  const payload = {
+    rentalInformation: req.body,
+    authUserInformation: req.user,
+  }
+  const result = await BookingServices.createRentalIntoDB(payload)
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
