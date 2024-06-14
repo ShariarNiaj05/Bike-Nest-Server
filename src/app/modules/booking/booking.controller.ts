@@ -2,6 +2,7 @@ import httpStatus from 'http-status'
 import catchAsync from '../../utils/catchAsync'
 import sendResponse from '../../utils/sendResponse'
 import { BookingServices } from './booking.services'
+import { JwtPayload } from 'jsonwebtoken'
 
 const createRental = catchAsync(async (req, res) => {
   const payload = {
@@ -19,12 +20,14 @@ const createRental = catchAsync(async (req, res) => {
 })
 
 const getAllRentalsForUser = catchAsync(async (req, res) => {
-  const result = await BookingServices.getAllRentalsForUserFromDB()
+  const result = await BookingServices.getAllRentalsForUserFromDB(
+    req.user as JwtPayload,
+  )
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Bookings retrieved successfully',
+    message: 'Rentals retrieved successfully',
     data: result,
   })
 })

@@ -65,9 +65,12 @@ const createRentalIntoDB = async (payload: TBooking) => {
   }
 }
 
-const getAllRentalsForUserFromDB = async () => {
+const getAllRentalsForUserFromDB = async (requestHeader: JwtPayload) => {
   try {
-    const result = await ''
+    const { email } = requestHeader
+    const userInfo = await User.findOne({ email: email })
+    const id = userInfo?.id
+    const result = await Booking.find({ userId: id })
     return result
   } catch (error) {
     throw new AppError(httpStatus.BAD_REQUEST, 'Rental retrieved failed')
