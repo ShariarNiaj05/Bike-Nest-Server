@@ -2,7 +2,7 @@
 
 Welcome to the Bike Rental Service! This application allows users to rent bikes seamlessly. Below you will find instructions to set up and run the application locally, along with details about the project.
 
-Table of Contents
+## Table of Contents
 
 - Features
 - Technology Used
