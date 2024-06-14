@@ -79,15 +79,50 @@ const getAllRentalsForUserFromDB = async (requestHeader: JwtPayload) => {
 
 const returnBikeIntoDB = async (id: string) => {
   const session = await mongoose.startSession()
-  const rentInfo = await Booking.findById(id).populate('bikeId')
-  console.log(rentInfo)
   try {
     session.startTransaction()
+    const rentInfo = await Booking.findById(id).populate('bikeId')
+
+    if (!rentInfo) {
+      throw new AppError(httpStatus.BAD_REQUEST, 'Rental not found')
+    }
+
+    if (rentInfo.isReturned === true) {
+      throw new AppError(
+        httpStatus.BAD_REQUEST,
+        'Bike Has been already returned',
+      )
+    }
+    console.log({ rentInfo })
+    const currentTime = new Date()
+
+    // Calculate rental duration and cost
+    const rentDurationInHours = Math.ceil(
+      (currentTime - rentInfo.startTime) / (1000 * 60 * 60),
+    )
+    const costPerHour = rentInfo.bikeId.pricePerHour
+    console.log({ costPerHour })
+    const totalCost = rentDurationInHours * costPerHour
+
+    // Update rental record
+    rentInfo.returnTime = currentTime
+    rentInfo.totalCost = totalCost
+    rentInfo.isReturned = true
+    await rentInfo.save()
+    // changing bike available status from false to true
+    const bikeIsAvailable = await Bike.findByIdAndUpdate(
+      rentInfo.bikeId,
+      {
+        isAvailable: true,
+      },
+      { new: true },
+    )
+    // rentInfo.bikeId.isAvailable = bikeIsAvailable
 
     await session.commitTransaction()
     await session.endSession()
-
-    const result = ''
+    console.log('last rentInfo', rentInfo)
+    const result = rentInfo
     return result
   } catch (error) {
     await session.abortTransaction()
