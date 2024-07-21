@@ -23,7 +23,7 @@ const loginUser = catchAsync(async (req, res) => {
     throw new AppError(httpStatus.UNAUTHORIZED, 'Mis Information')
   }
 
-  const bearerAccessToken = `Bearer ${accessToken}`
+  const bearerAccessToken = `${accessToken}`
   res.cookie('accessToken', bearerAccessToken, {
     secure: config.NODE_ENV === 'production',
     httpOnly: true,
