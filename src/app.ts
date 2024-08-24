@@ -22,7 +22,7 @@ app.use('/api', router)
 
 const test = async (req: Request, res: Response) => {
   // Promise.reject();
-  const a = 10
+  const a = 'Bike Nest Server'
   res.send(a)
 }
 
