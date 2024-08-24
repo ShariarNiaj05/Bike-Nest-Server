@@ -31,13 +31,13 @@ Follow The Instructions To Run The Application Locally
 ### Step:1 **Clone the repository**
 
 ```bash
-  git clone https://github.com/ShariarNiaj05/Bike-Rental-Service.git
+  git clone https://github.com/ShariarNiaj05/bike-nest.git
 ```
 
 ### Step:2 **Change the directory**
 
 ```bash
-  cd Bike-Rental-Service
+  cd bike-nest
 ```
 
 Or simply navigate to the folder and open VS Code in that directory.
