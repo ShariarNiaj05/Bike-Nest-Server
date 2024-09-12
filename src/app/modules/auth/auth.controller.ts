@@ -9,9 +9,9 @@ import AppError from '../../errors/AppError'
 
 const loginUser = catchAsync(async (req, res) => {
   const user = await User.findOne({ email: req?.body?.email })
-
+  console.log(user)
   const accessToken = await AuthServices.loginUser(req.body)
-
+  console.log('accessToken', accessToken)
   const decoded = jwt.verify(
     // tokenSplit[1],
     accessToken,
