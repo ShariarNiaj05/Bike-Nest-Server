@@ -6,7 +6,7 @@ export type TUser = {
   password: string
   phone: string
   address: string
-  role: 'admin' | 'user'
+  role?: 'admin' | 'user'
 }
 
 export type TUserRole = keyof typeof USER_ROLE
