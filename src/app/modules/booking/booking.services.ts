@@ -74,6 +74,7 @@ const getAllRentalsForUserFromDB = async (requestHeader: JwtPayload) => {
     const userInfo = await User.findOne({ email: email })
     const id = userInfo?.id
     const result = await Booking.find({ userId: id })
+    console.log('my rentals bike', result)
     return result
   } catch (error) {
     throw new AppError(httpStatus.BAD_REQUEST, 'Rental retrieved failed')
