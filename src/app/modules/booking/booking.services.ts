@@ -74,6 +74,8 @@ const getAllRentalsForUserFromDB = async (requestHeader: JwtPayload) => {
     const userInfo = await User.findOne({ email: email })
     const id = userInfo?.id
     const result = await Booking.find({ userId: id })
+      .populate('userId')
+      .populate('bikeId')
     console.log('my rentals bike', result)
     return result
   } catch (error) {
