@@ -25,7 +25,6 @@ const getAllBikeFromDB = async () => {
 const getBikeDetailsFromDB = async (id: string) => {
   try {
     const result = await Bike.findById(id)
-    console.log(result)
     return result
   } catch (error) {
     throw new AppError(httpStatus.BAD_REQUEST, 'Failed to retrieved Bike')
