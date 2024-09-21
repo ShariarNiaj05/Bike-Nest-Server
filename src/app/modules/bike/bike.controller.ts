@@ -26,7 +26,7 @@ const getAllBike = catchAsync(async (req, res) => {
 })
 const getBikeDetails = catchAsync(async (req, res) => {
   const { id } = req.params
-  const result = await BikeServices.getAllBikeFromDB()
+  const result = await BikeServices.()
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
