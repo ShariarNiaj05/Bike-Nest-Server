@@ -24,7 +24,17 @@ const getAllBike = catchAsync(async (req, res) => {
     data: result,
   })
 })
+const getBikeDetails = catchAsync(async (req, res) => {
+  const { id } = req.params
+  const result = await BikeServices.getAllBikeFromDB()
 
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Bikes retrieved successfully',
+    data: result,
+  })
+})
 const updateBike = catchAsync(async (req, res) => {
   const { id } = req.params
   const result = await BikeServices.updateBikeIntoDB(id, req.body)

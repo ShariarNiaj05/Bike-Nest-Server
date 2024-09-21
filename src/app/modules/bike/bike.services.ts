@@ -22,6 +22,16 @@ const getAllBikeFromDB = async () => {
     throw new AppError(httpStatus.BAD_REQUEST, 'Failed to retrieved Bike')
   }
 }
+const getBikeDetailsFromDB = async (id: string) => {
+  try {
+    const result = await Bike.find()
+    console.log(result)
+    return result
+  } catch (error) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to retrieved Bike')
+  }
+}
+
 const updateBikeIntoDB = async (id: string, payload: Partial<TBike>) => {
   try {
     const result = await Bike.findByIdAndUpdate(id, payload, {
