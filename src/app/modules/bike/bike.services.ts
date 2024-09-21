@@ -24,7 +24,7 @@ const getAllBikeFromDB = async () => {
 }
 const getBikeDetailsFromDB = async (id: string) => {
   try {
-    const result = await Bike.find()
+    const result = await Bike.findById(id)
     console.log(result)
     return result
   } catch (error) {
