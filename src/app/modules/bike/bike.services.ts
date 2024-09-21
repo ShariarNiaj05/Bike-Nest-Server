@@ -16,7 +16,6 @@ const createBikeIntoDB = async (payload: TBike) => {
 const getAllBikeFromDB = async () => {
   try {
     const result = await Bike.find()
-    console.log(result)
     return result
   } catch (error) {
     throw new AppError(httpStatus.BAD_REQUEST, 'Failed to retrieved Bike')
