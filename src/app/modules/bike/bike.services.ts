@@ -2,7 +2,7 @@ import httpStatus from 'http-status'
 import AppError from '../../errors/AppError'
 import { TBike } from './bike.interface'
 import { Bike } from './bike.model'
-import { JwtPayload } from 'jsonwebtoken'
+// import { JwtPayload } from 'jsonwebtoken'
 
 const createBikeIntoDB = async (payload: TBike) => {
   try {
