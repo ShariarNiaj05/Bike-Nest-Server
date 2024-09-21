@@ -62,6 +62,7 @@ const deleteBike = catchAsync(async (req, res) => {
 export const BikeControllers = {
   createBike,
   getAllBike,
+  getBikeDetails,
   updateBike,
   deleteBike,
 }
