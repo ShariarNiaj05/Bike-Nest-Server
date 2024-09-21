@@ -55,6 +55,7 @@ const deleteBikeFromDB = async (id: string) => {
 export const BikeServices = {
   createBikeIntoDB,
   getAllBikeFromDB,
+  getBikeDetailsFromDB,
   updateBikeIntoDB,
   deleteBikeFromDB,
 }
