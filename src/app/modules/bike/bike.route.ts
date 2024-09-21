@@ -7,6 +7,7 @@ import { USER_ROLE } from '../user/user.constant'
 
 const router = Router()
 router.get('/', BikeControllers.getAllBike)
+router.get('/:id', BikeControllers.)
 router.post(
   '/',
   auth(USER_ROLE.admin),
