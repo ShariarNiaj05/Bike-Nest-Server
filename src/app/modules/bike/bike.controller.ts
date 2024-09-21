@@ -31,7 +31,7 @@ const getBikeDetails = catchAsync(async (req, res) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Bikes retrieved successfully',
+    message: 'Bike details retrieved successfully',
     data: result,
   })
 })

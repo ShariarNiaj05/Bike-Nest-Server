@@ -22,6 +22,7 @@ const getAllBikeFromDB = async () => {
   }
 }
 const getBikeDetailsFromDB = async (id: string) => {
+  console.log(id)
   try {
     const result = await Bike.findById(id)
     return result
