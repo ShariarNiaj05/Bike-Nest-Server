@@ -5,6 +5,7 @@ const bikeSchema = new Schema<TBike>(
   {
     name: { type: String, required: true },
     description: { type: String, required: true },
+    imageUrl: { type: String, required: true },
     pricePerHour: { type: Number, required: true },
     isAvailable: { type: Boolean, default: true },
     cc: { type: Number, required: true },
