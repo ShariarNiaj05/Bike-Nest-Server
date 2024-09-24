@@ -46,7 +46,7 @@ const getAllUsers = catchAsync(async (req, res) => {
 })
 const deleteUser = catchAsync(async (req, res) => {
   const { id } = req.body
-  const result = await UserServices.deleteUserFromDB()
+  const result = await UserServices.deleteUserFromDB(id)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
