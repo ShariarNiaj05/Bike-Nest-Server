@@ -25,5 +25,10 @@ router.put(
 
 router.get('/', auth(USER_ROLE.admin), UserControllers.getAllUsers)
 router.delete('/', auth(USER_ROLE.admin), UserControllers.deleteUser)
+router.patch(
+  '/promote-role',
+  auth(USER_ROLE.admin),
+  UserControllers.promoteUser,
+)
 
 export const UserRoutes = router
