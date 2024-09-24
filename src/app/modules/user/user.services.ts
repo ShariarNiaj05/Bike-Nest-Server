@@ -61,6 +61,19 @@ const deleteUserFromDB = async (id: string) => {
     throw new AppError(httpStatus.BAD_REQUEST, 'Failed to Delete User')
   }
 }
+const promoteUserIntoDB = async (id: string) => {
+  try {
+    const user = await User.findByIdAndUpdate(
+      id,
+      { role: 'admin' },
+      { new: true },
+    )
+
+    return user
+  } catch (error) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to Delete User')
+  }
+}
 
 export const UserServices = {
   createUserIntoDB,
@@ -68,4 +81,5 @@ export const UserServices = {
   updateProfileIntoDB,
   getAllUsersFromDB,
   deleteUserFromDB,
+  promoteUserIntoDB,
 }
