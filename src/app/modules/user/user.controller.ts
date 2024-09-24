@@ -71,4 +71,5 @@ export const UserControllers = {
   updateProfile,
   getAllUsers,
   deleteUser,
+  promoteUser,
 }
