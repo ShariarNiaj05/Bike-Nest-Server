@@ -52,6 +52,15 @@ const getAllUsersFromDB = async () => {
     throw new AppError(httpStatus.BAD_REQUEST, 'Failed to Get User')
   }
 }
+const deleteUserFromDB = async (id: string) => {
+  try {
+    const deleteUser = await User.findByIdAndDelete(id)
+
+    return deleteUser
+  } catch (error) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to Delete User')
+  }
+}
 
 export const UserServices = {
   createUserIntoDB,
