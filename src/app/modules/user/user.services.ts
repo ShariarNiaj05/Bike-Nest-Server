@@ -57,4 +57,5 @@ export const UserServices = {
   createUserIntoDB,
   getProfileFromDB,
   updateProfileIntoDB,
+  getAllUsersFromDB,
 }
