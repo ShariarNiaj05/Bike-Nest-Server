@@ -56,7 +56,7 @@ const deleteUser = catchAsync(async (req, res) => {
 })
 const promoteUser = catchAsync(async (req, res) => {
   const { id } = req.body
-  const result = await UserServices.deleteUserFromDB(id)
+  const result = await UserServices.promoteUserIntoDB(id)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
