@@ -43,6 +43,16 @@ const updateProfileIntoDB = async (
     throw new AppError(httpStatus.BAD_REQUEST, 'Failed to Get User')
   }
 }
+
+const getAllUsersFromDB = async () => {
+  try {
+    const users = await User.find()
+    return users
+  } catch (error) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to Get User')
+  }
+}
+
 export const UserServices = {
   createUserIntoDB,
   getProfileFromDB,
