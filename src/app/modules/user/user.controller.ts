@@ -49,4 +49,5 @@ export const UserControllers = {
   createUser,
   getProfile,
   updateProfile,
+  getAllUsers,
 }
