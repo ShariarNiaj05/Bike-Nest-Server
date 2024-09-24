@@ -67,4 +67,5 @@ export const UserServices = {
   getProfileFromDB,
   updateProfileIntoDB,
   getAllUsersFromDB,
+  deleteUserFromDB,
 }
