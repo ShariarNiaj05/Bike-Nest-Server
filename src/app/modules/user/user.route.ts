@@ -23,6 +23,6 @@ router.put(
   UserControllers.updateProfile,
 )
 
-router.get('/', auth(USER_ROLE.admin), getAllUsers)
+router.get('/', auth(USER_ROLE.admin), UserControllers.getAllUsers)
 
 export const UserRoutes = router
