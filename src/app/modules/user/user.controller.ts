@@ -50,7 +50,7 @@ const deleteUser = catchAsync(async (req, res) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'All Users Retrieved Successfully',
+    message: 'User deleted successfully',
     data: result,
   })
 })
@@ -60,7 +60,7 @@ const promoteUser = catchAsync(async (req, res) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'All Users Retrieved Successfully',
+    message: 'User role has been promoted',
     data: result,
   })
 })
