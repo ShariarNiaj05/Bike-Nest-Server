@@ -27,7 +27,6 @@ const getProfile = catchAsync(async (req, res) => {
 
 const updateProfile = catchAsync(async (req, res) => {
   const result = await UserServices.updateProfileIntoDB(req.user, req.body)
-  console.log('update profile request data', result)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
