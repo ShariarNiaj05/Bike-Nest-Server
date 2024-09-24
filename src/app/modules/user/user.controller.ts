@@ -60,4 +60,5 @@ export const UserControllers = {
   getProfile,
   updateProfile,
   getAllUsers,
+  deleteUser,
 }
