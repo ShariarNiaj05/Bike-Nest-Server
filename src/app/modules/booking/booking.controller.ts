@@ -58,4 +58,5 @@ export const BookingControllers = {
   createRental,
   returnBike,
   getAllRentalsForUser,
+  getAllBikeToBeReturn,
 }
