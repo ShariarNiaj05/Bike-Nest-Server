@@ -198,4 +198,5 @@ export const BookingServices = {
   createRentalIntoDB,
   returnBikeIntoDB,
   getAllRentalsForUserFromDB,
+  getAllBikeToBeReturnFromDB,
 }
