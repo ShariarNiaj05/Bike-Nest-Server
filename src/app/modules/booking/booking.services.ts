@@ -84,14 +84,14 @@ const getAllRentalsForUserFromDB = async (requestHeader: JwtPayload) => {
 }
 
 const getAllBikeToBeReturnFromDB = async () => {
-  const session = await mongoose.startSession()
+  // const session = await mongoose.startSession()
   try {
-    session.startTransaction()
+    // session.startTransaction()
     const availableBikeToReturn = await Booking.find()
       .populate('bikeId')
       .populate('userId')
 
-    if (!rentInfo) {
+    /*  if (!rentInfo) {
       throw new AppError(httpStatus.BAD_REQUEST, 'Rental not found')
     }
 
@@ -130,9 +130,9 @@ const getAllBikeToBeReturnFromDB = async () => {
 
     await session.commitTransaction()
     await session.endSession()
-    console.log('last rentInfo', rentInfo)
-    const result = rentInfo
-    return result
+    console.log('last rentInfo', rentInfo) */
+
+    return availableBikeToReturn
   } catch (error) {
     await session.abortTransaction()
     await session.endSession()
