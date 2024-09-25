@@ -7,7 +7,7 @@ const router = Router()
 
 router.post('/', auth(USER_ROLE.user), BookingControllers.createRental)
 router.get('/', BookingControllers.getAllRentalsForUser)
-router.put('/', auth(USER_ROLE.admin), BookingControllers.getAllBikeToBeReturn)
+router.get('/', auth(USER_ROLE.admin), BookingControllers.getAllBikeToBeReturn)
 router.put('/:id/return', auth(USER_ROLE.admin), BookingControllers.returnBike)
 
 export const BookingRoutes = router
