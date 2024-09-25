@@ -32,6 +32,16 @@ const getAllRentalsForUser = catchAsync(async (req, res) => {
   })
 })
 
+const getAllBikeToBeReturn = catchAsync(async (req, res) => {
+  const result = await BookingServices.returnBikeIntoDB()
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'ALL bike to be returned successful',
+    data: result,
+  })
+})
 const returnBike = catchAsync(async (req, res) => {
   const { id } = req.params
   const result = await BookingServices.returnBikeIntoDB(id)
