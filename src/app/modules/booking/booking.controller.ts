@@ -20,6 +20,7 @@ const createRental = catchAsync(async (req, res) => {
 })
 
 const getAllRentalsForUser = catchAsync(async (req, res) => {
+  console.log('req.user', req.user)
   const result = await BookingServices.getAllRentalsForUserFromDB(
     req.user as JwtPayload,
   )
