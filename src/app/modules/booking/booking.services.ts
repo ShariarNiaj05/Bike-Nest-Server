@@ -69,6 +69,7 @@ const createRentalIntoDB = async (payload: {
 }
 
 const getAllRentalsForUserFromDB = async (requestHeader: JwtPayload) => {
+  console.log('requestHeader', requestHeader)
   try {
     const { email } = requestHeader
     const userInfo = await User.findOne({ email: email })
