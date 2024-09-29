@@ -137,8 +137,6 @@ const getAllBikeToBeReturnFromDB = async () => {
 
     return availableBikeToReturn
   } catch (error) {
-    // await session.abortTransaction()
-    // await session.endSession()
     throw new AppError(httpStatus.BAD_REQUEST, `Failed to Return bike ${error}`)
   }
 }
