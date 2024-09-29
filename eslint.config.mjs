@@ -25,6 +25,7 @@ export default [
     },
     rules: {
       'no-unused-vars': 'warn',
+      'no-explicit-any': 'warn',
       semi: ['error', 'always'],
       'no-console': 'warn',
       'no-unused-expressions': 'error',
