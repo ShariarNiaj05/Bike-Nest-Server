@@ -154,7 +154,6 @@ const returnBikeIntoDB = async (id: string) => {
 
     await session.commitTransaction()
     await session.endSession()
-    console.log('last rentInfo', rentInfo)
     const result = rentInfo
     return result
   } catch (error) {
