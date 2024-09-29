@@ -1,6 +1,5 @@
 import httpStatus from 'http-status'
 import AppError from '../../errors/AppError'
-import { TBooking } from './booking.interface'
 import { Booking } from './booking.model'
 import { JwtPayload } from 'jsonwebtoken'
 import { User } from '../user/user.model'
