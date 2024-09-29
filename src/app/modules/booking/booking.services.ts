@@ -182,7 +182,14 @@ const returnBikeIntoDB = async (id: string) => {
         },
         { new: true },
       )
-      console.log({ bikeIsAvailable })
+      // Check if bikeIsAvailable is null
+      if (!bikeIsAvailable) {
+        throw new AppError(
+          httpStatus.BAD_REQUEST,
+          'Failed to update bike availability',
+        )
+      }
+
       rentInfo.bikeId = bikeIsAvailable
       await rentInfo.save()
     } else {
