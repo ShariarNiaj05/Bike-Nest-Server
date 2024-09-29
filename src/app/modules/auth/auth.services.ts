@@ -19,7 +19,7 @@ const loginUser = async (payload: TLoginUser) => {
   // send accessToken
   const jwtPayload = {
     email: user.email,
-    role: user.role,
+    role: user.role as string,
   }
   // const bearerToken = `Bearer ${jwtPayload}`
   const accessToken = createToken(
