@@ -129,7 +129,6 @@ const returnBikeIntoDB = async (id: string) => {
       rentInfo.totalCost = totalCost
       rentInfo.isReturned = true
 
-      console.log('sfddddd', rentInfo.bikeId)
       // changing bike available status from false to true
       const bikeIsAvailable = await Bike.findByIdAndUpdate(
         rentInfo.bikeId._id,
