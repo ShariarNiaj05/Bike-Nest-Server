@@ -1,4 +1,5 @@
 export type TBike = {
+  _id: string
   name: string
   description: string
   pricePerHour: number
