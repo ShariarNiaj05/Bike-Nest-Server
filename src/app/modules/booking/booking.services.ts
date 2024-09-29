@@ -93,8 +93,6 @@ const getAllBikeToBeReturnFromDB = async () => {
       .populate('bikeId')
       .populate('userId')
 
-    console.log('availableBikeToReturn', availableBikeToReturn)
-
     return availableBikeToReturn
   } catch (error) {
     throw new AppError(httpStatus.BAD_REQUEST, `Failed to Return bike ${error}`)
