@@ -44,6 +44,7 @@ const createRentalIntoDB = async (payload: {
       userId,
       bikeId: rentalInformation.bikeId,
       startTime: rentalInformation.startTime,
+      totalCost: 100,
     }
     // updating bike isAvailable status to false
     await Bike.findByIdAndUpdate(
