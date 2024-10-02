@@ -5,7 +5,8 @@ import globalErrorHandler from './app/middlewares/globalErrorHandler'
 import notFound from './app/middlewares/notFound'
 // import notFoundRoute from './app/middlewares/notFoundRoute'
 import cookieParser from 'cookie-parser'
-import stripe from 'stripe'
+import Stripe from 'stripe'
+import config from './app/config'
 
 const app: Application = express()
 
@@ -36,6 +37,7 @@ app.use(globalErrorHandler)
 
 //Not Found
 app.use(notFound)
+const stripe = new Stripe(config.stripeSecretKey as string)
 
 const calculateOrderAmount = items => {
   // Calculate the order total on the server to prevent
@@ -53,7 +55,7 @@ app.post('/create-payment-intent', async (req, res) => {
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
     amount: calculateOrderAmount(items),
-    currency: 'usd',
+    currency: 'bdt',
     // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
     automatic_payment_methods: {
       enabled: true,
