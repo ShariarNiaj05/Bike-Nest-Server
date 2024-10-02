@@ -39,23 +39,14 @@ app.use(globalErrorHandler)
 app.use(notFound)
 const stripe = new Stripe(config.stripeSecretKey as string)
 
-const calculateOrderAmount = items => {
-  // Calculate the order total on the server to prevent
-  // people from directly manipulating the amount on the client
-  let total = 0
-  items.forEach(item => {
-    total += item.amount
-  })
-  return total
-}
-
 app.post('/create-payment-intent', async (req, res) => {
-  const { items } = req.body
+  const { amount } = req.body
 
+  const amountInCents = parseInt(amount, 10) * 100
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: calculateOrderAmount(items),
-    currency: 'bdt',
+    amount: amountInCents,
+    currency: 'usd',
     // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
     automatic_payment_methods: {
       enabled: true,
