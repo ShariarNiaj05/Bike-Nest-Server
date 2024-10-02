@@ -20,24 +20,8 @@ app.use(
 )
 app.use(cookieParser())
 
-// const stripe = require("stripe")('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
-
 // application routes
 app.use('/api', router)
-
-const test = async (req: Request, res: Response) => {
-  // Promise.reject();
-  const a = 'Bike Nest Server'
-  res.send(a)
-}
-
-app.get('/', test)
-
-app.use(globalErrorHandler)
-
-//Not Found
-app.use(notFound)
-const stripe = new Stripe(config.stripeSecretKey as string)
 
 app.post('/create-payment-intent', async (req, res) => {
   const { amount } = req.body
@@ -59,6 +43,21 @@ app.post('/create-payment-intent', async (req, res) => {
     dpmCheckerLink: `https://dashboard.stripe.com/settings/payment_methods/review?transaction_id=${paymentIntent.id}`,
   })
 })
+
+const test = async (req: Request, res: Response) => {
+  // Promise.reject();
+  const a = 'Bike Nest Server'
+  res.send(a)
+}
+
+app.get('/', test)
+
+app.use(globalErrorHandler)
+
+//Not Found
+app.use(notFound)
+const stripe = new Stripe(config.stripeSecretKey as string)
+
 /* //route not found
 app.use(notFoundRoute) */
 
