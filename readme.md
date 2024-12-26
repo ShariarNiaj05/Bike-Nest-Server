@@ -130,6 +130,15 @@ vercel.json
 
 ```
 
+## Technology Stack
+
+| Frontend          | Backend    | DevOps/ Deployment |
+| ----------------- | ---------- | ------------------ |
+| TypeScript        | TypeScript | Frontend: Vercel   |
+| React             | Node.js    | Backend: Vercel    |
+| Redux + RTK Query | Express.js |                    |
+| Shadcn UI         | Mongoose   |                    |
+
 <!-- ------------------ -->
 
 ## Setup and Installation
