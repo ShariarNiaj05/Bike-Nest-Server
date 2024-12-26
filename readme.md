@@ -23,6 +23,8 @@ The Bike Nest web application is purposed for the development of an effective, u
 5. Provide error handling and friendly messages for seamless navigation, even in case of issues.
 6. Offer scalability to integrate future features like geolocation, notifications, or multilingual support.
 
+### **Features**
+
 <!-- ------------------ -->
 
 ## Setup and Installation
