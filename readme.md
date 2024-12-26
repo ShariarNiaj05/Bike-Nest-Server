@@ -52,6 +52,84 @@ The Bike Nest web application is purposed for the development of an effective, u
 - Micro-animations for smooth interactions.
 - Comprehensive error handling and custom 404 pages.
 
+# File Structure
+
+```js
+.eslintignore
+.gitignore
+.prettierrc.json
+eslint.config.mjs
+package-lock.json
+package.json
+readme.md
+src
+   |-- app.ts
+   |-- app
+   |   |-- config
+   |   |   |-- index.ts
+   |   |-- errors
+   |   |   |-- AppError.ts
+   |   |   |-- handleCastError.ts
+   |   |   |-- handleDuplicateError.ts
+   |   |   |-- handleValidationError.ts
+   |   |   |-- handleZodError.ts
+   |   |-- interface
+   |   |   |-- errorInterface.ts
+   |   |   |-- index.d.ts
+   |   |-- middlewares
+   |   |   |-- auth.ts
+   |   |   |-- globalErrorHandler.ts
+   |   |   |-- notFound.ts
+   |   |   |-- notFoundRoute.ts
+   |   |   |-- validateRequest.ts
+   |   |-- modules
+   |   |   |-- auth
+   |   |   |   |-- auth.controller.ts
+   |   |   |   |-- auth.interface.ts
+   |   |   |   |-- auth.route.ts
+   |   |   |   |-- auth.services.ts
+   |   |   |   |-- auth.utils.ts
+   |   |   |   |-- auth.validation.ts
+   |   |   |-- bike
+   |   |   |   |-- bike.controller.ts
+   |   |   |   |-- bike.interface.ts
+   |   |   |   |-- bike.model.ts
+   |   |   |   |-- bike.route.ts
+   |   |   |   |-- bike.services.ts
+   |   |   |   |-- bike.validation.ts
+   |   |   |-- booking
+   |   |   |   |-- booking.controller.ts
+   |   |   |   |-- booking.interface.ts
+   |   |   |   |-- booking.model.ts
+   |   |   |   |-- booking.route.ts
+   |   |   |   |-- booking.services.ts
+   |   |   |   |-- booking.validation.ts
+   |   |   |-- scratch
+   |   |   |   |-- scratch.controller.ts
+   |   |   |   |-- scratch.interface.ts
+   |   |   |   |-- scratch.model.ts
+   |   |   |   |-- scratch.route.ts
+   |   |   |   |-- scratch.services.ts
+   |   |   |   |-- scratch.validation.ts
+   |   |   |-- user
+   |   |   |   |-- user.constant.ts
+   |   |   |   |-- user.controller.ts
+   |   |   |   |-- user.interface.ts
+   |   |   |   |-- user.model.ts
+   |   |   |   |-- user.route.ts
+   |   |   |   |-- user.services.ts
+   |   |   |   |-- user.validation.ts
+   |   |-- routes
+   |   |   |-- index.ts
+   |   |-- utils
+   |   |   |-- catchAsync.ts
+   |   |   |-- sendResponse.ts
+   |-- server.ts
+tsconfig.json
+vercel.json
+
+```
+
 <!-- ------------------ -->
 
 ## Setup and Installation
