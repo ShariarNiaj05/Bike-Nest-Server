@@ -25,6 +25,13 @@ The Bike Nest web application is purposed for the development of an effective, u
 
 ### **Features**
 
+### **1. Public Pages**
+
+- **Home Page**: Hero section, featured bikes, testimonials.
+- **About Us**: Mission, team profiles, milestones, and contact details.
+- **Bike Listing and Details**: Filterable bike catalog with detailed bike profiles.
+- **Authentication**: User-friendly sign-up/login interfaces.
+
 <!-- ------------------ -->
 
 ## Setup and Installation
