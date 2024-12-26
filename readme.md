@@ -2,19 +2,7 @@
 
 Welcome to the Bike Nest! This application allows users to rent bikes seamlessly. Below you will find instructions to set up and run the application locally, along with details about the project.
 
-## Table of Contents
-
-- Features
-- Technology Used
-- Setup and Installation
-
-## Features
-
-1. User registration and authentication
-2. Get available bikes
-3. Rent bikes
-4. Return bikes and calculate rental cost
-5. Admin for managing bike inventory
+## **Project Description**
 
 ## Technology Used
 
