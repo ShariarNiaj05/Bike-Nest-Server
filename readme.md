@@ -8,14 +8,6 @@ Welcome to the Bike Nest! This application allows users to rent bikes seamlessly
 
 The Bike Nest web application is purposed for the development of an effective, user-friendly platform where users can view, book, and manage bike rentals with ease. This system integrates both frontend and backend functionalities to provide a modern web application that caters to customers, ensures easy administration, and enables secure transactions.
 
-## Technology Used
-
-1. Backend: Node.js, Express.js
-2. Database: MongoDB
-3. Environment Configuration: dotenv
-4. Version Control: Git
-5. Deployment: Vercel
-
 ## Setup and Installation
 
 Follow The Instructions To Run The Application Locally
