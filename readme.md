@@ -344,3 +344,38 @@ Access: `Private (Headers Authorization)`
 ```
 
 </details>
+
+## Bikes
+
+<details>
+<summary> Create Bike/ Insert Bike</summary>
+
+Endpoint: `{{bike-rental-url}}/bikes`
+
+Method: `POST`
+
+Access: Private (Headers Authorization)
+
+Request Body:
+
+> Request Body:
+
+```json
+{
+  "name": "Mountain Bike 41",
+  "description": "4 is A durable mountain bike for rough terrains.",
+  "pricePerHour": 15,
+  "cc": 250,
+  "year": 2022,
+  "model": "X3",
+  "brand": "Yamaha"
+}
+```
+
+> Response - 200
+
+```json
+
+```
+
+</details>
