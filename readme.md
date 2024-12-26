@@ -379,3 +379,139 @@ Request Body:
 ```
 
 </details>
+
+<details>
+<summary> Get All Bikes</summary>
+
+Endpoint: `{{bike-rental-url}}/bikes`
+
+Method: GET
+
+Access: Public
+
+Request Body:
+
+> Request Body:
+
+```json
+
+```
+
+> Response - 200
+
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "Bikes retrieved successfully",
+  "data": [
+    {
+      "_id": "666cbbec39ae46edcd0b23f2",
+      "name": "Mountain Bike 2",
+      "description": "A durable mountain bike for rough terrains.",
+      "pricePerHour": 20,
+      "isAvailable": true,
+      "cc": 250,
+      "year": 2022,
+      "model": "X2",
+      "brand": "Yamaha",
+      "createdAt": "2024-06-14T21:53:48.028Z",
+      "updatedAt": "2024-10-02T18:40:57.479Z",
+      "__v": 0,
+      "imageUrl": "https://media.cnn.com/api/v1/images/stellar/prod/230419133455-velotric-thunder-1-ebike-lead-cnnu.jpg?c=original"
+    },
+    {
+      "_id": "668016803c8e081e411236cf",
+      "name": "Mountain Bike 4",
+      "description": "4 is A durable mountain bike for rough terrains.",
+      "pricePerHour": 15,
+      "isAvailable": true,
+      "cc": 250,
+      "year": 2022,
+      "model": "X3",
+      "brand": "Yamaha",
+      "createdAt": "2024-06-29T14:13:20.894Z",
+      "updatedAt": "2024-10-01T18:00:29.778Z",
+      "__v": 0,
+      "imageUrl": "https://sklarbikes.com/cdn/shop/products/Adam-Sklar-and-His-Super-Something-Gravel-Bike-1.jpg?v=1708229654"
+    },
+    {
+      "_id": "66802be1da74876e74a40ee1",
+      "name": "Mountain Bike 4",
+      "description": "4 is A durable mountain bike for rough terrains.",
+      "pricePerHour": 15,
+      "isAvailable": true,
+      "cc": 250,
+      "year": 2022,
+      "model": "X3",
+      "brand": "Yamaha",
+      "createdAt": "2024-06-29T15:44:33.666Z",
+      "updatedAt": "2024-10-02T19:40:37.841Z",
+      "__v": 0,
+      "imageUrl": "https://arkel.ca/cdn/shop/collections/Terratributa_Bertrand_Lemeunier_Orca_handlebar_bag_WEB_Large_ce24dba4-1d43-4e1d-b7c0-53425239ea16.jpg?v=1678988762&width=2400"
+    },
+    {
+      "_id": "66802bfeda74876e74a40ee4",
+      "name": "Mountain Bike 4",
+      "description": "4 is A durable mountain bike for rough terrains.",
+      "pricePerHour": 15,
+      "isAvailable": true,
+      "cc": 250,
+      "year": 2022,
+      "model": "X3",
+      "brand": "Yamaha",
+      "createdAt": "2024-06-29T15:45:02.890Z",
+      "updatedAt": "2024-06-29T15:45:02.890Z",
+      "__v": 0,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdWQJi6l6P8SOoWzuyyvDbzHgQvMo57iLVgg&s"
+    },
+    {
+      "_id": "66f06608ca4725d410d367d3",
+      "name": "sdfdfd",
+      "description": "sfsdfsf",
+      "pricePerHour": 200,
+      "isAvailable": true,
+      "cc": 2220,
+      "year": 2020,
+      "model": "dzdgdg",
+      "brand": "Kawasaki",
+      "createdAt": "2024-09-22T18:46:32.644Z",
+      "updatedAt": "2024-10-01T16:30:48.257Z",
+      "__v": 0,
+      "imageUrl": "https://c02.purpledshub.com/uploads/sites/39/2022/10/Fox-DHX-Factory-rear-mountain-bike-shock-2-3e0ee7f.jpg"
+    },
+    {
+      "_id": "66f066993cca95f6ab706467",
+      "name": "sdfdfd",
+      "description": "sfsdfsf",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1678718713393-2b88cde9605b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlrZXxlbnwwfHwwfHx8MA%3D%3D",
+      "pricePerHour": 200,
+      "isAvailable": false,
+      "cc": 2220,
+      "year": 2020,
+      "model": "dzdgdg",
+      "brand": "Kawasaki",
+      "createdAt": "2024-09-22T18:48:57.952Z",
+      "updatedAt": "2024-10-02T19:50:23.824Z",
+      "__v": 0
+    },
+    {
+      "_id": "66f06e7d3cca95f6ab706479",
+      "name": "new add update",
+      "description": "dfsdfsdf",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1678718713393-2b88cde9605b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlrZXxlbnwwfHwwfHx8MA%3D%3D",
+      "pricePerHour": 100,
+      "isAvailable": true,
+      "cc": 100,
+      "year": 2024,
+      "model": "fgff",
+      "brand": "Kawasaki",
+      "createdAt": "2024-09-22T19:22:37.781Z",
+      "updatedAt": "2024-10-02T19:27:36.912Z",
+      "__v": 0
+    }
+  ]
+}
+```
+
+</details>
