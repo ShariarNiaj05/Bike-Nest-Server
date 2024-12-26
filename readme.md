@@ -741,3 +741,58 @@ Request Body:
 ```
 
 </details>
+
+<details>
+<summary> Return Bike</summary>
+
+Endpoint: `{{bike-rental-url}}/rentals/:id/return` id ⇒ bikeId
+
+Method: `PUT`
+
+Access: Private (Headers Authorization)
+
+Request Body:
+
+> Request Body:
+
+```json
+
+```
+
+> Response - 200
+
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "Bike returned successfully",
+  "data": {
+    "_id": "66fda3ff862569feff14a025",
+    "userId": "66e70bddea2a86de6d61a2f3",
+    "bikeId": {
+      "_id": "66f066993cca95f6ab706467",
+      "name": "sdfdfd",
+      "description": "sfsdfsf",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1678718713393-2b88cde9605b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlrZXxlbnwwfHwwfHx8MA%3D%3D",
+      "pricePerHour": 200,
+      "isAvailable": true,
+      "cc": 2220,
+      "year": 2020,
+      "model": "dzdgdg",
+      "brand": "Kawasaki",
+      "createdAt": "2024-09-22T18:48:57.952Z",
+      "updatedAt": "2024-12-23T17:19:40.455Z",
+      "__v": 0
+    },
+    "startTime": "2024-10-02T19:50:00.000Z",
+    "returnTime": "2024-12-23T17:19:40.454Z",
+    "totalCost": 393200,
+    "isReturned": true,
+    "createdAt": "2024-10-02T19:50:23.853Z",
+    "updatedAt": "2024-12-23T17:19:40.484Z",
+    "__v": 0
+  }
+}
+```
+
+</details>
