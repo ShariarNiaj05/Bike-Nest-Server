@@ -229,3 +229,45 @@ Access: `public`
 ```
 
 </details>
+
+<details>
+<summary>Login User </summary>
+
+Endpoint: `{{bike-rental-url}}/auth/login`
+
+Method: `POST`
+
+Access: `public`
+
+> Request Body
+
+```json
+{
+  "email": "admin2@example.com",
+  "password": "password123"
+}
+```
+
+> Response - 200
+
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "User logged in successfully",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMkBleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDk2OTQ1MiwiZXhwIjoxNzM3NTYxNDUyfQ.3Zzu1EYDQgjgME9zHGlGiAE1Os0kDgUHAoarC2-QjDQ",
+  "data": {
+    "_id": "668028096d51eca6fe6afcbb",
+    "name": "admin now 06",
+    "email": "admin2@example.com",
+    "phone": "0987654321",
+    "address": "123 Main St, Anytown",
+    "role": "admin",
+    "createdAt": "2024-06-29T15:28:09.881Z",
+    "updatedAt": "2024-07-06T14:00:04.918Z",
+    "__v": 0
+  }
+}
+```
+
+</details>
