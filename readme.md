@@ -638,3 +638,106 @@ Request Body:
 ```
 
 </details>
+
+<details>
+<summary> Get All Bookings For Users</summary>
+
+Endpoint: `{{bike-rental-url}}/rental`
+
+Method: `GET`
+
+Access: Private (Headers Authorization)
+
+Request Body:
+
+> Request Body:
+
+```json
+
+```
+
+> Response - 200
+
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "ALL bike to be returned successful",
+  "data": [
+    {
+      "_id": "66fda3ff862569feff14a025",
+      "userId": {
+        "_id": "66e70bddea2a86de6d61a2f3",
+        "name": "user",
+        "email": "user1@gmail.com",
+        "phone": "123456789",
+        "address": "sdfsf",
+        "role": "user",
+        "createdAt": "2024-09-15T16:31:25.539Z",
+        "updatedAt": "2024-09-15T16:31:25.539Z",
+        "__v": 0
+      },
+      "bikeId": {
+        "_id": "66f066993cca95f6ab706467",
+        "name": "sdfdfd",
+        "description": "sfsdfsf",
+        "imageUrl": "https://plus.unsplash.com/premium_photo-1678718713393-2b88cde9605b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlrZXxlbnwwfHwwfHx8MA%3D%3D",
+        "pricePerHour": 200,
+        "isAvailable": false,
+        "cc": 2220,
+        "year": 2020,
+        "model": "dzdgdg",
+        "brand": "Kawasaki",
+        "createdAt": "2024-09-22T18:48:57.952Z",
+        "updatedAt": "2024-10-02T19:50:23.824Z",
+        "__v": 0
+      },
+      "startTime": "2024-10-02T19:50:00.000Z",
+      "returnTime": null,
+      "totalCost": 100,
+      "isReturned": false,
+      "createdAt": "2024-10-02T19:50:23.853Z",
+      "updatedAt": "2024-10-02T19:50:23.853Z",
+      "__v": 0
+    },
+    {
+      "_id": "67699a53316ec9adb0c1fc12",
+      "userId": {
+        "_id": "66e70bddea2a86de6d61a2f3",
+        "name": "user",
+        "email": "user1@gmail.com",
+        "phone": "123456789",
+        "address": "sdfsf",
+        "role": "user",
+        "createdAt": "2024-09-15T16:31:25.539Z",
+        "updatedAt": "2024-09-15T16:31:25.539Z",
+        "__v": 0
+      },
+      "bikeId": {
+        "_id": "666cbbec39ae46edcd0b23f2",
+        "name": "Mountain Bike 2",
+        "description": "A durable mountain bike for rough terrains.",
+        "pricePerHour": 20,
+        "isAvailable": false,
+        "cc": 250,
+        "year": 2022,
+        "model": "X2",
+        "brand": "Yamaha",
+        "createdAt": "2024-06-14T21:53:48.028Z",
+        "updatedAt": "2024-12-23T17:13:55.091Z",
+        "__v": 0,
+        "imageUrl": "https://media.cnn.com/api/v1/images/stellar/prod/230419133455-velotric-thunder-1-ebike-lead-cnnu.jpg?c=original"
+      },
+      "startTime": "2024-06-14T09:00:00.000Z",
+      "returnTime": null,
+      "totalCost": 100,
+      "isReturned": false,
+      "createdAt": "2024-12-23T17:13:55.139Z",
+      "updatedAt": "2024-12-23T17:13:55.139Z",
+      "__v": 0
+    }
+  ]
+}
+```
+
+</details>
