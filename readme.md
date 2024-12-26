@@ -555,3 +555,40 @@ Request Body:
 ```
 
 </details>
+
+<details>
+<summary> Delete Bike</summary>
+
+Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
+
+Method: `DELETE`
+
+Access: Private (Headers Authorization)
+
+Request Body:
+
+> Request Body:
+
+```json
+
+```
+
+> Response - 200
+
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "Bike deleted successfully",
+  "data": {
+    "_id": "666cbc0639ae46edcd0b23f5",
+    "__v": 0,
+    "createdAt": "2024-12-23T16:50:28.755Z",
+    "isAvailable": true,
+    "pricePerHour": 30,
+    "updatedAt": "2024-12-23T16:50:28.755Z"
+  }
+}
+```
+
+</details>
