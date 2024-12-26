@@ -271,3 +271,35 @@ Access: `public`
 ```
 
 </details>
+
+<details>
+<summary>Get Profile </summary>
+
+Endpoint: `{{bike-rental-url}}/auth/users/me`
+
+Method: `GET`
+
+Access: `Private (Headers Authorization)`
+
+> Response:
+
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "User profile retrieved successfully",
+  "data": {
+    "_id": "668028096d51eca6fe6afcbb",
+    "name": "admin now 06",
+    "email": "admin2@example.com",
+    "phone": "0987654321",
+    "address": "123 Main St, Anytown",
+    "role": "admin",
+    "createdAt": "2024-06-29T15:28:09.881Z",
+    "updatedAt": "2024-07-06T14:00:04.918Z",
+    "__v": 0
+  }
+}
+```
+
+</details>
