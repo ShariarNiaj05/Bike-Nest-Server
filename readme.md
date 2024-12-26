@@ -32,6 +32,26 @@ The Bike Nest web application is purposed for the development of an effective, u
 - **Bike Listing and Details**: Filterable bike catalog with detailed bike profiles.
 - **Authentication**: User-friendly sign-up/login interfaces.
 
+### **2. Private/User Features**
+
+- **Dashboard**: Personalized interface displaying rentals, payments, and quick access to profile.
+- **Profile Management**: Update personal details easily.
+- **Rental History**: Tabs for paid and unpaid rentals with payment features.
+
+### **3. Admin Features**
+
+- **Bike Management**: Add, edit, or remove bikes, and filter them by attributes like model or availability.
+- **User Management**: Promote users to admin roles or deactivate inactive accounts.
+- **Rental Handling**: Process bike returns and calculate costs automatically.
+- **Coupon Management**: Create and track coupon usage.
+
+### **4. Extra Features**
+
+- Responsive design with a dark mode toggle.
+- Side-by-side bike comparison tool for customers.
+- Micro-animations for smooth interactions.
+- Comprehensive error handling and custom 404 pages.
+
 <!-- ------------------ -->
 
 ## Setup and Installation
