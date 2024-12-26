@@ -515,3 +515,43 @@ Request Body:
 ```
 
 </details>
+
+<details>
+<summary> Update Bike</summary>
+
+Endpoint: `{{bike-rental-url}}/bikes/:id` id ⇒ bikeId
+
+Method: `PUT`
+
+Access: Private (Headers Authorization)
+
+Request Body:
+
+> Request Body:
+
+```json
+{
+  "pricePerHour": 30
+  // Any desired filed that is supposed to update
+}
+```
+
+> Response - 200
+
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "Bike updated successfully",
+  "data": {
+    "_id": "666cbc0639ae46edcd0b23f5",
+    "__v": 0,
+    "createdAt": "2024-12-23T16:50:28.755Z",
+    "isAvailable": true,
+    "pricePerHour": 30,
+    "updatedAt": "2024-12-23T16:50:28.755Z"
+  }
+}
+```
+
+</details>
