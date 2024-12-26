@@ -180,3 +180,7 @@ Or simply navigate to the folder and open VS Code in that directory.
 ```
 
 The server will start running on http://localhost:5000
+
+## API Endpoints
+
+### User/ Authentication
