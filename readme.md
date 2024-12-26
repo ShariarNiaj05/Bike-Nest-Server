@@ -13,6 +13,16 @@ The Bike Nest web application is purposed for the development of an effective, u
 1. **User Convenience**: Simplify the process of renting bikes with an intuitive interface.
 2. **Efficient Management**: Provide administrators to manage inventory, users, and rentals effectively.
 3. **Responsiveness**: Ensure the platform is accessible across devices, offering a seamless experience on desktops, tablets, and mobiles.
+
+### **Goals:**
+
+1. **Enable a hassle-free bike rental experience** for users, from browsing to booking and payment.
+2. **Streamline operations** for administrators, allowing quick updates to bike inventory and rental statuses.
+3. **Build trust and credibility** through detailed pages, such as "About Us" and customer testimonials.
+4. Improve user retention with personalized dashboards and user account management.
+5. Provide error handling and friendly messages for seamless navigation, even in case of issues.
+6. Offer scalability to integrate future features like geolocation, notifications, or multilingual support.
+
 <!-- ------------------ -->
 
 ## Setup and Installation
