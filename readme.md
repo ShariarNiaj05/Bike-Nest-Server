@@ -303,3 +303,44 @@ Access: `Private (Headers Authorization)`
 ```
 
 </details>
+<details>
+<summary> Update Profile</summary>
+
+Endpoint: `{{bike-rental-url}}/auth/users/me`
+
+Method: `PUT`
+
+Access: `Private (Headers Authorization)`
+
+> Request Body:
+
+```json
+{
+  "name": "admin now 06",
+  "phone": "0987654321"
+  // Desired field that is supposed to update
+}
+```
+
+> Response - 200
+
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "Profile updated successfully",
+  "data": {
+    "_id": "668028096d51eca6fe6afcbb",
+    "name": "admin now 06",
+    "email": "admin2@example.com",
+    "phone": "0987654321",
+    "address": "123 Main St, Anytown",
+    "role": "admin",
+    "createdAt": "2024-06-29T15:28:09.881Z",
+    "updatedAt": "2024-12-23T16:03:24.672Z",
+    "__v": 0
+  }
+}
+```
+
+</details>
