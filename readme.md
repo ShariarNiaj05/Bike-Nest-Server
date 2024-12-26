@@ -184,3 +184,48 @@ The server will start running on http://localhost:5000
 ## API Endpoints
 
 ### User/ Authentication
+
+<details>
+<summary>SignUp User</summary>
+
+> Request Body
+
+Endpoint: `{{bike-rental-url}}/auth/signup`
+
+Method: `POST`
+
+Access: `public`
+
+```json
+{
+  "name": "admin 3",
+  "email": "admin55@example.com",
+  "password": "password123",
+  "phone": "1234567890",
+  "address": "123 Main St, Anytown",
+  "role": "admin"
+}
+```
+
+> Response - 200
+
+```json
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "User registered successfully",
+  "data": {
+    "name": "admin 3",
+    "email": "admin55@example.com",
+    "phone": "1234567890",
+    "address": "123 Main St, Anytown",
+    "role": "admin",
+    "_id": "6768117611ef05e2107d1b4e",
+    "createdAt": "2024-12-22T13:17:42.356Z",
+    "updatedAt": "2024-12-22T13:17:42.356Z",
+    "__v": 0
+  }
+}
+```
+
+</details>
