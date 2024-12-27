@@ -52,6 +52,10 @@ The Bike Nest web application is purposed for the development of an effective, u
 - Micro-animations for smooth interactions.
 - Comprehensive error handling and custom 404 pages.
 
+## Here is how all of these feature connects
+
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVLzaox_o=/?moveToViewport=-3254,-1695,9038,4672&embedId=242706421924" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
 # File Structure
 
 ```js
