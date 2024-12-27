@@ -3,6 +3,7 @@ import { TBike } from '../bike/bike.interface'
 import { TUser } from '../user/user.interface'
 
 export type TBooking = {
+  _id?: string
   userId: Types.ObjectId | TUser
   bikeId: Types.ObjectId | TBike
   startTime: Date
